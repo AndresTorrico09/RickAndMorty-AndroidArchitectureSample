@@ -16,4 +16,12 @@
         <item name="android:textColorSecondary">#EEEEEE</item>
     </style>
 
+    <style name="MyTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="MySubtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
 </resources>
