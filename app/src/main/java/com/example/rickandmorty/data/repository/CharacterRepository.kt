@@ -1,5 +1,6 @@
 package com.example.rickandmorty.data.repository
 
+import androidx.paging.toLiveData
 import com.example.rickandmorty.data.local.CharacterDao
 import com.example.rickandmorty.data.remote.CharacterRemoteDataSource
 import com.example.rickandmorty.utils.performGetOperation
@@ -17,7 +18,7 @@ class CharacterRepository @Inject constructor(
     )
 
     fun getCharacters() = performGetOperation(
-        databaseQuery = { localDataSource.getAllCharacters() },
+        databaseQuery = { localDataSource.getAllCharacters().toLiveData(pageSize = 10) },
         networkCall = { remoteDataSource.getCharacters() },
         saveCallResult = { localDataSource.insertAll(it.results) }
     )
