@@ -37,4 +37,12 @@
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <com.example.rickandmorty.utils.customviews.CircleView
+        android:id="@+id/my_circle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/species_and_status"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
