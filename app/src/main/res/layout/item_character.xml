@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:circle="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp">
@@ -18,23 +19,23 @@
 
     <TextView
         android:id="@+id/name"
-        android:textAppearance="@style/MyTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         android:text="TextView"
+        android:textAppearance="@style/MyTitle"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/species_and_status"
-        android:textAppearance="@style/MySubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"
         android:text="TextView"
+        android:textAppearance="@style/MySubtitle"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -43,6 +44,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toEndOf="@+id/image"
-        app:layout_constraintTop_toBottomOf="@+id/species_and_status"/>
+        app:layout_constraintTop_toBottomOf="@+id/species_and_status"
+        circle:circle_background = "@color/colorPrimary"
+        circle:onCenter="true"
+        circle:circle_radius="100dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
