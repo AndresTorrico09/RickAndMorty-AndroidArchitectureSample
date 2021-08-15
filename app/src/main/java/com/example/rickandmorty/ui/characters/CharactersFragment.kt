@@ -49,7 +49,7 @@ class CharactersFragment : Fragment(), CharactersAdapter.CharacterItemListener {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
-                    if (!it.data.isNullOrEmpty()) adapter.setItems(ArrayList(it.data))
+                    if (!it.data.isNullOrEmpty()) adapter.submitList(it.data)
                 }
                 Resource.Status.ERROR ->
                     Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()

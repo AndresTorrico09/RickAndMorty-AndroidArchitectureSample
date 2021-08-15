@@ -4,24 +4,19 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.rickandmorty.data.entities.Character
 import com.example.rickandmorty.databinding.ItemCharacterBinding
 
-class CharactersAdapter(private val listener: CharacterItemListener) : RecyclerView.Adapter<CharacterViewHolder>() {
+class CharactersAdapter(private val listener: CharacterItemListener) :
+    PagedListAdapter<Character, CharacterViewHolder>(DIFF_CALLBACK) {
 
     interface CharacterItemListener {
         fun onClickedCharacter(characterId: Int)
-    }
-
-    private val items = ArrayList<Character>()
-
-    fun setItems(items: ArrayList<Character>) {
-        this.items.clear()
-        this.items.addAll(items)
-        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
@@ -29,9 +24,20 @@ class CharactersAdapter(private val listener: CharacterItemListener) : RecyclerV
         return CharacterViewHolder(binding, listener)
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
+         getItem(position)?.let { holder.bind(it) }
+    }
 
-    override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) = holder.bind(items[position])
+    companion object {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Character>() {
+            override fun areItemsTheSame(oldItem: Character, newItem: Character) =
+                oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: Character, newItem: Character) =
+                oldItem == newItem
+
+        }
+    }
 }
 
 class CharacterViewHolder(private val itemBinding: ItemCharacterBinding, private val listener: CharactersAdapter.CharacterItemListener) : RecyclerView.ViewHolder(itemBinding.root),
