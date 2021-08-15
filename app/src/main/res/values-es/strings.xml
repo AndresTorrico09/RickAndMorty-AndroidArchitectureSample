@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RickYMorty</string>
+    <string name="detail_fragment_title">Detalle del Personaje</string>
+    <string name="list_fragment_title">Personajes</string>
+    <string name="species_title">Especie:</string>
+    <string name="status_title">Estado:</string>
+    <string name="gender_title">Genero:</string>
+</resources>
