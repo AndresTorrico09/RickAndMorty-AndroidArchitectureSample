@@ -25,4 +25,12 @@
             android:text="@string/radio_light_title" />
     </RadioGroup>
 
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:max="100"
+        android:min="0" />
+
 </LinearLayout>
