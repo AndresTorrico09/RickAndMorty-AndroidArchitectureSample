@@ -5,4 +5,7 @@
     <string name="species_title">Species:</string>
     <string name="status_title">Status:</string>
     <string name="gender_title">Gender:</string>
+    <string name="drawer_title">Drawer Title</string>
+    <string name="drawer_item_title_0">drawer_item_title_0</string>
+    <string name="drawer_item_title_1">/drawer_item_title_1</string>
 </resources>
