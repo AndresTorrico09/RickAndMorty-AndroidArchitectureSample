@@ -30,7 +30,7 @@
     <fragment
         android:id="@+id/settingsFragmentDest"
         android:name="com.example.rickandmorty.SettingsFragment"
-        android:label="fragment_settings"
+        android:label="@string/confuguration_title"
         tools:layout="@layout/fragment_settings" >
         <action
             android:id="@+id/action_settingsFragment4_to_charactersFragment"

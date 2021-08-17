@@ -8,4 +8,7 @@
     <string name="drawer_title">RickAndMorty App</string>
     <string name="drawer_item_characters_title">Characters List</string>
     <string name="drawer_item_settings_title">Settings</string>
+    <string name="radio_dark_title">Dark Mode</string>
+    <string name="radio_light_title">Light Mode</string>
+    <string name="confuguration_title">Settings</string>
 </resources>
