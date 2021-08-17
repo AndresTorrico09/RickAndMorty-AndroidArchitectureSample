@@ -12,12 +12,28 @@
         tools:layout="@layout/characters_fragment" >
         <action
             android:id="@+id/action_charactersFragment_to_characterDetailFragment"
-            app:destination="@id/characterDetailFragment" />
+            app:destination="@id/characterDetailFragmentDest" />
+        <action
+            android:id="@+id/action_charactersFragment_to_settingsFragment4"
+            app:destination="@id/settingsFragmentDest" />
 
     </fragment>
     <fragment
-        android:id="@+id/characterDetailFragment"
+        android:id="@+id/characterDetailFragmentDest"
         android:name="com.example.rickandmorty.ui.characterdetail.CharacterDetailFragment"
         android:label="@string/detail_fragment_title"
-        tools:layout="@layout/character_detail_fragment" />
+        tools:layout="@layout/character_detail_fragment" >
+        <action
+            android:id="@+id/action_characterDetailFragment_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragmentDest"
+        android:name="com.example.rickandmorty.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment4_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
+    </fragment>
 </navigation>

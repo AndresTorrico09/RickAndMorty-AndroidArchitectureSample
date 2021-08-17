@@ -6,4 +6,7 @@
     <string name="species_title">Especie:</string>
     <string name="status_title">Estado:</string>
     <string name="gender_title">Genero:</string>
+    <string name="drawer_title">RickYMorty App</string>
+    <string name="drawer_item_characters_title">Lista de Personajes</string>
+    <string name="drawer_item_settings_title">Configuracion</string>
 </resources>

@@ -3,13 +3,13 @@
     <item android:title="@string/drawer_title">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/charactersFragment"
                 android:icon="@drawable/ic_launcher_foreground"
-                android:title="@string/drawer_item_title_0" />
+                android:title="@string/drawer_item_characters_title" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/settingsFragmentDest"
                 android:icon="@drawable/ic_launcher_foreground"
-                android:title="@string/drawer_item_title_1" />
+                android:title="@string/drawer_item_settings_title" />
         </menu>
     </item>
 </menu>
