@@ -28,7 +28,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
     private fun setButtonListener() {
         binding.btnNext.setOnClickListener {
-            val editTextValue = binding.editText.text.toString()
+            val editTextValue = binding.editTextSettings.text.toString()
             val bundle = bundleOf("editTextValue" to editTextValue)
 
             findNavController().navigate(
