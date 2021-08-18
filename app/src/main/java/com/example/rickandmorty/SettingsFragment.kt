@@ -1,5 +1,6 @@
 package com.example.rickandmorty
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioGroup
@@ -16,14 +17,20 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSettingsBinding.bind(view)
 
+        setPreferences()
         setRadioButtonListener(view)
         setSeekBarListener()
+    }
+
+    private fun setPreferences() {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        binding.sbBrightness.progress = sharedPref.getInt(BRIGHTNESS_PREF, 0)
     }
 
     private fun setRadioButtonListener(view: View) {
         binding.rgTheme.setOnCheckedChangeListener { radioGroup: RadioGroup, optionId: Int ->
             when (optionId) {
-                R.id.radio_dark ->{
+                R.id.radio_dark -> {
                     Snackbar.make(view, "radio_dark", Snackbar.LENGTH_SHORT).show()
                     view.announceForAccessibility("Se activó el Modo Oscuro")
                 }
@@ -46,7 +53,17 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 // ("write custom code for progress is stopped")
                 Toast.makeText(requireContext(), "${seekBar.progress} %", Toast.LENGTH_SHORT).show()
+
+                val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+                with(sharedPref.edit()) {
+                    putInt(BRIGHTNESS_PREF, seekBar.progress)
+                    apply()
+                }
             }
         })
+    }
+
+    companion object {
+        const val BRIGHTNESS_PREF = "BRIGHTNESS_PREF"
     }
 }
