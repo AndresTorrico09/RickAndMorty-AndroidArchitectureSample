@@ -12,4 +12,6 @@
     <string name="radio_dark_title">Modo Oscuro</string>
     <string name="radio_light_title">Modo Claro</string>
     <string name="confuguration_title">Configuración</string>
+    <string name="settings_theme_title">Configuración de Tema de la App:</string>
+    <string name="settings_brightness_title">Brillo:</string>
 </resources>

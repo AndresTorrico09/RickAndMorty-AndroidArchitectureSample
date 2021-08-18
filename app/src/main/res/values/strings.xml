@@ -11,4 +11,6 @@
     <string name="radio_dark_title">Dark Mode</string>
     <string name="radio_light_title">Light Mode</string>
     <string name="confuguration_title">Settings</string>
+    <string name="settings_theme_title">Theme:</string>
+    <string name="settings_brightness_title">Brightness:</string>
 </resources>
