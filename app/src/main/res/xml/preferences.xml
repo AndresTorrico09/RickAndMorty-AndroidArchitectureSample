@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        app:key="visualization_category"
+        app:title="Visualization">
+
+        <SwitchPreference
+            app:key="@string/preference_dark_id"
+            app:title="@string/settings_theme_title" />
+
+        <SeekBarPreference
+            android:key="@string/preference_brightness_id"
+            android:title="@string/settings_brightness_title"
+            android:max="100"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

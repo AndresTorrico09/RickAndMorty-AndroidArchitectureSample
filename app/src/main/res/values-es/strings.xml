@@ -9,10 +9,10 @@
     <string name="drawer_title">RickYMorty App</string>
     <string name="drawer_item_characters_title">Lista de Personajes</string>
     <string name="drawer_item_settings_title">Configuracion</string>
-    <string name="radio_dark_title">Modo Oscuro</string>
-    <string name="radio_light_title">Modo Claro</string>
+    <string name="radio_dark_title">Si</string>
+    <string name="radio_light_title">No</string>
     <string name="confuguration_title">Configuración</string>
-    <string name="settings_theme_title">Configuración de Tema de la App:</string>
+    <string name="settings_theme_title">Modo Oscuro de la App Detalle:</string>
     <string name="settings_brightness_title">Brillo:</string>
     <string name="label_input">Escriba su idea:</string>
     <string name="settings_detail_fragment_title">Detalles de Configuracion</string>

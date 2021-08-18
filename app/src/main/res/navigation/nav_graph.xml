@@ -9,13 +9,16 @@
         android:id="@+id/charactersFragment"
         android:name="com.example.rickandmorty.ui.characters.CharactersFragment"
         android:label="@string/list_fragment_title"
-        tools:layout="@layout/characters_fragment" >
+        tools:layout="@layout/characters_fragment">
         <action
             android:id="@+id/action_charactersFragment_to_characterDetailFragment"
             app:destination="@id/characterDetailFragmentDest" />
         <action
             android:id="@+id/action_charactersFragment_to_settingsFragment4"
             app:destination="@id/settingsFragmentDest" />
+        <action
+            android:id="@+id/action_charactersFragment_to_preferencesFragment"
+            app:destination="@id/preferencesFragment" />
 
     </fragment>
     <fragment
@@ -47,5 +50,13 @@
         <action
             android:id="@+id/action_setttingsDetailFragment_to_settingsFragmentDest"
             app:destination="@id/settingsFragmentDest" />
+    </fragment>
+    <fragment
+        android:id="@+id/preferencesFragment"
+        android:name="com.example.rickandmorty.ui.settings.PreferencesFragment"
+        android:label="PreferencesFragment">
+        <action
+            android:id="@+id/action_preferencesFragment_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
     </fragment>
 </navigation>
