@@ -13,4 +13,6 @@
     <string name="confuguration_title">Settings</string>
     <string name="settings_theme_title">Theme:</string>
     <string name="settings_brightness_title">Brightness:</string>
+    <string name="label_input">Type your idea:</string>
+    <string name="settings_detail_fragment_title">Settings Detail</string>
 </resources>

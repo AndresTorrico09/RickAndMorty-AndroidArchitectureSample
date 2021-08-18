@@ -29,11 +29,23 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragmentDest"
-        android:name="com.example.rickandmorty.SettingsFragment"
+        android:name="com.example.rickandmorty.ui.settings.SettingsFragment"
         android:label="@string/confuguration_title"
-        tools:layout="@layout/fragment_settings" >
+        tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment4_to_charactersFragment"
             app:destination="@id/charactersFragment" />
+        <action
+            android:id="@+id/action_settingsFragmentDest_to_setttingsDetailFragment"
+            app:destination="@id/setttingsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setttingsDetailFragment"
+        android:name="com.example.rickandmorty.ui.settings.SetttingsDetailFragment"
+        android:label="@string/settings_detail_fragment_title"
+        tools:layout="@layout/fragment_setttings_detail">
+        <action
+            android:id="@+id/action_setttingsDetailFragment_to_settingsFragmentDest"
+            app:destination="@id/settingsFragmentDest" />
     </fragment>
 </navigation>

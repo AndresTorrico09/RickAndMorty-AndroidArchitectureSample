@@ -1,4 +1,4 @@
-package com.example.rickandmorty
+package com.example.rickandmorty.ui.settings
 
 import android.content.Context
 import android.os.Bundle
@@ -6,7 +6,10 @@ import android.view.View
 import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentSettingsBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -20,6 +23,19 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         setPreferences()
         setRadioButtonListener(view)
         setSeekBarListener()
+        setButtonListener()
+    }
+
+    private fun setButtonListener() {
+        binding.btnNext.setOnClickListener {
+            val editTextValue = binding.editText.text.toString()
+            val bundle = bundleOf("editTextValue" to editTextValue)
+
+            findNavController().navigate(
+                R.id.action_settingsFragmentDest_to_setttingsDetailFragment,
+                bundle
+            )
+        }
     }
 
     private fun setPreferences() {
