@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SettingsFragment"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".SettingsFragment">
 
     <TextView
         android:id="@+id/tv_theme"
@@ -15,22 +15,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:text="@string/settings_theme_title"
         android:labelFor="@+id/rg_theme"
+        android:text="@string/settings_theme_title"
         app:layout_constrainedWidth="true"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/rg_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:focusable="true"
         android:focusableInTouchMode="false"
-        app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_theme"
+        app:layout_constraintTop_toTopOf="@+id/tv_theme"
+        app:layout_constraintStart_toEndOf="@+id/guideline">
 
         <RadioButton
             android:id="@+id/radio_dark"
@@ -53,33 +54,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:text="@string/settings_brightness_title"
+        android:layout_marginTop="15dp"
         android:labelFor="@+id/sb_brightness"
+        android:text="@string/settings_brightness_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_theme" />
 
     <SeekBar
         android:id="@+id/sb_brightness"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:max="100"
         android:contentDescription="Set brightness"
+        android:max="100"
         android:min="0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/tv_theme" />
+        app:layout_constraintTop_toTopOf="@id/tv_brightness"
+        app:layout_constraintBottom_toBottomOf="@id/tv_brightness" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="100dp"/>
+        app:layout_constraintGuide_begin="100dp" />
 
     <com.example.rickandmorty.utils.customviews.CircleView
         android:id="@+id/my_circle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:importantForAccessibility="no"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         circle:circle_background="@color/colorPrimary"
