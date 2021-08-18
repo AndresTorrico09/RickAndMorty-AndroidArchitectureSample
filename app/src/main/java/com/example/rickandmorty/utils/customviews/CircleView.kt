@@ -37,7 +37,7 @@ class CircleView(context: Context, attributeSet: AttributeSet): View(context, at
     }
 
     override fun onDraw(canvas: Canvas?) {
-        isCenter?.let {
+        isCenter.let {
             centerOfX = (width / 2).toFloat()
             centerOfY = (height / 2).toFloat()
         }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:circle="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp">
@@ -38,15 +37,5 @@
         android:textAppearance="@style/MySubtitle"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/name" />
-
-    <com.example.rickandmorty.utils.customviews.CircleView
-        android:id="@+id/my_circle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toEndOf="@+id/image"
-        app:layout_constraintTop_toBottomOf="@+id/species_and_status"
-        circle:circle_background = "@color/colorPrimary"
-        circle:onCenter="true"
-        circle:circle_radius="100dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
