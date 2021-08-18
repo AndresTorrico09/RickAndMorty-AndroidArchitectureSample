@@ -23,8 +23,10 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     private fun setRadioButtonListener(view: View) {
         binding.rgTheme.setOnCheckedChangeListener { radioGroup: RadioGroup, optionId: Int ->
             when (optionId) {
-                R.id.radio_dark ->
+                R.id.radio_dark ->{
                     Snackbar.make(view, "radio_dark", Snackbar.LENGTH_SHORT).show()
+                    view.announceForAccessibility("Se activó el Modo Oscuro")
+                }
                 R.id.radio_light ->
                     Toast.makeText(requireContext(), "radio_light", Toast.LENGTH_SHORT).show()
             }
