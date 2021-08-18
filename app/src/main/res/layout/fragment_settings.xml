@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:circle="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,11 +8,23 @@
     android:orientation="vertical"
     tools:context=".SettingsFragment">
 
+    <TextView
+        android:id="@+id/tv_app_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="App Theme: "
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <RadioGroup
         android:id="@+id/rg_theme"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/tv_app_theme"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radio_dark"
@@ -33,16 +45,18 @@
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:max="100"
-        android:min="0" />
+        android:min="0"
+        app:layout_constraintTop_toBottomOf="@id/rg_theme"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <com.example.rickandmorty.utils.customviews.CircleView
         android:id="@+id/my_circle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toEndOf="@+id/image"
-        app:layout_constraintTop_toBottomOf="@+id/species_and_status"
         circle:circle_background="@color/colorPrimary"
         circle:circle_radius="100dp"
-        circle:onCenter="true" />
+        circle:onCenter="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
