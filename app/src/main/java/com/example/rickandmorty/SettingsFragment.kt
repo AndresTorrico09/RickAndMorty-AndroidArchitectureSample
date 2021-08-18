@@ -32,7 +32,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     }
 
     private fun setSeekBarListener() {
-        binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.sbBrightness.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 //("write custom code for progress is changed")
             }

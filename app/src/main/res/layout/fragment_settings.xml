@@ -6,24 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SettingsFragment">
+    tools:context=".SettingsFragment"
+    android:padding="10dp">
 
     <TextView
-        android:id="@+id/tv_app_theme"
+        android:id="@+id/tv_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:text="App Theme: "
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/rg_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/tv_app_theme"
+        app:layout_constraintStart_toEndOf="@+id/tv_theme"
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
@@ -39,24 +40,34 @@
             android:text="@string/radio_light_title" />
     </RadioGroup>
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/tv_brightness"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Brightness: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_theme" />
+
+    <SeekBar
+        android:id="@+id/sb_brightness"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:max="100"
         android:min="0"
-        app:layout_constraintTop_toBottomOf="@id/rg_theme"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/tv_brightness"
+        app:layout_constraintTop_toBottomOf="@id/rg_theme" />
 
     <com.example.rickandmorty.utils.customviews.CircleView
         android:id="@+id/my_circle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         circle:circle_background="@color/colorPrimary"
         circle:circle_radius="100dp"
-        circle:onCenter="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        circle:onCenter="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
