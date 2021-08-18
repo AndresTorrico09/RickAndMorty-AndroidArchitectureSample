@@ -2,11 +2,9 @@ package com.example.rickandmorty
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
-import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.example.rickandmorty.ui.settings.SettingsFragment
@@ -33,5 +31,17 @@ class SettingsFragmentTests {
 
         onView(withId(R.id.editTextSettings))
             .check(matches(withText("espresso")))
+    }
+
+    @Test
+    fun clickRadioButtonDark_radioButtonDarkIsChecked() {
+        launchFragmentInContainer<SettingsFragment>()
+
+        onView(withId(R.id.radio_dark)).perform(click())
+        //TODO: verify snackbar after clicking
+
+        onView(withId(R.id.radio_dark)).check(matches(isDisplayed()))
+        onView(withId(R.id.radio_dark)).check(matches(isChecked()))
+        onView(withId(R.id.radio_light)).check(matches(isNotChecked()))
     }
 }
