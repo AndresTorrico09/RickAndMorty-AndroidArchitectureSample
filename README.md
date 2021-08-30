@@ -17,10 +17,11 @@ A Rick And Morty simple app that loads information from [The Rick and Morty API]
  * [Eli-Fox LEGO Catalog project](https://proandroiddev.com/android-architecture-starring-kotlin-coroutines-jetpack-mvvm-room-paging-retrofit-and-dagger-7749b2bae5f7)
 
 
-## Changes in develop branch
- * Paging 2
+## My own changes in develop branch:
+ * Paging 2 (db + network)
  * Custom Views
  * Navigation Drawer
  * Locale multi-language
  * Dark theme & styles
  * Widgets: RadioGroup/RadioButton, SeekBar
+ * Preferences library
