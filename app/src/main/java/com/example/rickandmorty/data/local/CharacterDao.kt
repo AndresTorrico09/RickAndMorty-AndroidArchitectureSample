@@ -2,6 +2,7 @@ package com.example.rickandmorty.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
+import androidx.paging.PagingSource
 import androidx.room.*
 import com.example.rickandmorty.data.entities.Character
 
@@ -9,7 +10,7 @@ import com.example.rickandmorty.data.entities.Character
 interface CharacterDao {
 
     @Query("SELECT * FROM characters")
-    fun getAllCharacters() : DataSource.Factory<Int, Character>
+    fun getAllCharacters() : PagingSource<Int, Character>
 
     @Query("SELECT * FROM characters WHERE id = :id")
     fun getCharacter(id: Int): LiveData<Character>
@@ -23,4 +24,6 @@ interface CharacterDao {
     @Update
     suspend fun updateCharacters(characters: List<Character>)
 
+    @Query("DELETE FROM characters")
+    suspend fun clearCharacters()
 }

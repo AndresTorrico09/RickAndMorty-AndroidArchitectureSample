@@ -5,11 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.rickandmorty.data.entities.Character
+import com.example.rickandmorty.data.entities.RemoteKey
 
-@Database(entities = [Character::class], version = 1, exportSchema = false)
+@Database(entities = [Character::class, RemoteKey::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun characterDao(): CharacterDao
+    abstract fun remoteKeysDao(): RemoteKeysDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null

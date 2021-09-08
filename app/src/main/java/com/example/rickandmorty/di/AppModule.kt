@@ -54,8 +54,7 @@ object AppModule {
     @Provides
     fun provideRepository(
         remoteDataSource: CharacterRemoteDataSource,
-        localDataSource: CharacterDao,
-        coroutinesDispatcherProvider: CoroutinesDispatcherProvider
+        appDatabase: AppDatabase
     ) =
-        CharacterRepository(remoteDataSource, localDataSource, coroutinesDispatcherProvider)
+        CharacterRepository(remoteDataSource, appDatabase)
 }

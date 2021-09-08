@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -13,7 +14,7 @@ import com.example.rickandmorty.data.entities.Character
 import com.example.rickandmorty.databinding.ItemCharacterBinding
 
 class CharactersAdapter(private val listener: CharacterItemListener) :
-    PagedListAdapter<Character, CharacterViewHolder>(DIFF_CALLBACK) {
+    PagingDataAdapter<Character, CharacterViewHolder>(DIFF_CALLBACK) {
 
     interface CharacterItemListener {
         fun onClickedCharacter(characterId: Int)
